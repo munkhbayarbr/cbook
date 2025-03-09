@@ -1,5 +1,5 @@
 'use client';
-import { Calendar, Home, Inbox, Search, Settings } from 'lucide-react';
+import { Calendar, Home, Inbox, Link, Search, Settings } from 'lucide-react';
 
 import {
   Sidebar,
@@ -12,6 +12,7 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import React from 'react';
+import { Button } from '@/components/ui/button';
 
 const items = [
   {
@@ -46,22 +47,25 @@ const AppSidebar = React.memo(function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent className='bg-[#efefef]'>
-        <SidebarGroup>
-          <SidebarGroupLabel>Цэс</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
+        <SidebarGroup className='flex flex-col justify-between h-full'>
+          <div>
+            <SidebarGroupLabel>Цэс</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {items.map((item) => (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <a href={item.url}>
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </div>
+          <Button className='mb-6 mx-12 '>гарах</Button>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>

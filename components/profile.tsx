@@ -7,7 +7,7 @@ export default function Profile({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <div className='h-14 w-full bg-[#efefef] flex items-center justify-between rounded-md'>
+      <div className='h-14 w-full bg-[#efefef] flex items-center justify-between shadow-lg '>
         <div className='flex gap-4'>
           {children}
           <div className='flex flex-row gap-2 items-center justify-center'>
